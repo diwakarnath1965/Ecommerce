@@ -26,6 +26,9 @@ export const getProducts = catchAsyncError( async (req,res) => {
 // create new product 
 //url = /api/v1/admin/products
 export const newProduct = catchAsyncError( async (req,res) => {
+
+    req.body.user = req.user._id
+    
     const product = await Product.create(req.body)
 
     
