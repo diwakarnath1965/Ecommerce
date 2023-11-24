@@ -25,9 +25,11 @@ app.use(cookieParser())
 //routes
 import productRoutes from "../backend/routes/products.js"
 import authRoutes from "../backend/routes/auth.js"
+import orderRoutes from "../backend/routes/order.js"
 
 app.use("/api/v1", productRoutes);
 app.use("/api/v1", authRoutes);
+app.use("/api/v1", orderRoutes);
 
 //error middleware
 app.use(errorMiddleware)

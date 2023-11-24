@@ -1,6 +1,6 @@
 import express from "express"
 import { AllUsers, deleteUser, forgotPassword, getUserDetails, getUserProfile, loginUser, logout, registerUser, resetPassword, updatePassword, updateProfile, updateUser } from "../controllers/authController.js";
-import { isAuthentiatedUser,authorizeRoles } from "../middleware/auth.js";
+import { isAuthenticatedUser,authorizeRoles } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -9,11 +9,11 @@ router.route("/login").post(loginUser)
 router.route("/logout").get(logout)
 router.route("/password/forgot").post(forgotPassword)
 router.route("/password/reset/:token").put(resetPassword)
-router.route("/me").get(isAuthentiatedUser,getUserProfile)
-router.route("/password/update").put(isAuthentiatedUser,updatePassword)
-router.route("/me/update").put(isAuthentiatedUser,updateProfile)
-router.route("/admin/users").get(isAuthentiatedUser,authorizeRoles("admin"),AllUsers)
-router.route("/admin/users/:id").get(isAuthentiatedUser,authorizeRoles("admin"),getUserDetails).put(isAuthentiatedUser,authorizeRoles("admin"),updateUser).delete(isAuthentiatedUser,authorizeRoles("admin"),deleteUser)
+router.route("/me").get(isAuthenticatedUser,getUserProfile)
+router.route("/password/update").put(isAuthenticatedUser,updatePassword)
+router.route("/me/update").put(isAuthenticatedUser,updateProfile)
+router.route("/admin/users").get(isAuthenticatedUser,authorizeRoles("admin"),AllUsers)
+router.route("/admin/users/:id").get(isAuthenticatedUser,authorizeRoles("admin"),getUserDetails).put(isAuthenticatedUser,authorizeRoles("admin"),updateUser).delete(isAuthenticatedUser,authorizeRoles("admin"),deleteUser)
 
 
 export default router

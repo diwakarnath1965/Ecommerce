@@ -53,7 +53,7 @@ export const getproductDetails = catchAsyncError( async (req,res,next) => {
 
 // update product by id 
 //url = /api/v1/products/:id
-export const updateProduct = catchAsyncError( async (req,res) => {
+export const updateProduct = catchAsyncError( async (req,res,next) => {
     let product = await Product.findById(req?.params?.id)
 
     if(!product) {
