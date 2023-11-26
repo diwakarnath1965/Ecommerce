@@ -6,6 +6,7 @@ import sendToken from "../utils/sendToken.js";
 import sendEmail from "../utils/sendEmail.js";
 import crypto from "crypto";
 import e from "express";
+import { delete_file, upload_file } from "../utils/cloudinary.js";
 //register user
 
 export const registerUser = catchAsyncError(async (req, res) => {
@@ -57,6 +58,27 @@ export const logout = catchAsyncError(async (req, res) => {
   res.status(200).json({
     success: true,
     message: "Logged Out",
+  });
+});
+
+// upload user avatar
+
+export const uploadAvatar = catchAsyncError(async (req, res, next) => {
+  const avatarResponse = await upload_file(req.body.avatar, "ecommerce/avatars");
+
+  //remote old avatar from cloudinary
+
+  if (req?.user?.avatar?.url) {
+    await delete_file(req?.user?.avatar?.public_id);
+  }
+
+  const user = await User.findByIdAndUpdate(
+    req?.user?._id,
+    {avatar: avatarResponse,
+  });
+
+  res.status(200).json({
+    user,
   });
 });
 
