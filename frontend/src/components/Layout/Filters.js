@@ -58,7 +58,7 @@ const Filters = () => {
 
   const defaultCheckHandler = (checkboxType, checkboxValue) => {
     const value = searchParams.get(checkboxType);
-    if (checkboxValue == value) {
+    if (checkboxValue === value) {
       return true;
     }
     return false;
