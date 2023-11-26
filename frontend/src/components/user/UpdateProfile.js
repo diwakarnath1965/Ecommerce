@@ -4,6 +4,7 @@ import { useUpdateProfileMutation } from "../../redux/api/userApi";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import UserLayout from "../Layout/UserLayout";
+import MetaData from "../Layout/MetaData";
 
 const UpdateProfile = () => {
 
@@ -46,6 +47,7 @@ const UpdateProfile = () => {
 
   return (
     <UserLayout>
+    <MetaData title={"Update Profile"} />
     <div className="row wrapper">
       <div className="col-10 col-lg-8">
         <form
