@@ -15,7 +15,9 @@ import UpdatePassword from "./components/user/UpdatePassword";
 import ForgotPassword from "./components/auth/ForgotPassword";
 import ResetPassword from "./components/auth/ResetPassword";
 import Cart from "./components/Cart/Cart";
-
+import Shipping from "./components/Cart/Shipping";
+import ConfirmOrder from "./components/Cart/ConfirmOrder";
+import PaymentMethod from "./components/Cart/PaymentMethod";
 
 function App() {
   return (
@@ -30,8 +32,8 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/password/forgot" element={<ForgotPassword/>}/>
-            <Route path="/password/reset/:token" element={<ResetPassword/>}/>
+            <Route path="/password/forgot" element={<ForgotPassword />} />
+            <Route path="/password/reset/:token" element={<ResetPassword />} />
 
             <Route
               path="/me/profile"
@@ -68,7 +70,34 @@ function App() {
               }
             />
 
-            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/cart" element={<Cart />} />
+
+            <Route
+              path="/shipping"
+              element={
+                <ProtectedRoute>
+                  <Shipping />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/confirm_order"
+              element={
+                <ProtectedRoute>
+                  <ConfirmOrder />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/payment_method"
+              element={
+                <ProtectedRoute>
+                  <PaymentMethod />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
 
