@@ -17,7 +17,9 @@ dotenv.config({path: "backend/config/.env"})
 
 connectDatabase();
 
-app.use(express.json({limit: "10mb"}))
+app.use(express.json({limit: "10mb", verify: (req, res, buf) => {
+    req.rawBody = buf.toString()
+}}))
 app.use(cookieParser())
 
 
@@ -26,10 +28,12 @@ app.use(cookieParser())
 import productRoutes from "../backend/routes/products.js"
 import authRoutes from "../backend/routes/auth.js"
 import orderRoutes from "../backend/routes/order.js"
+import paymentRoutes from "./routes/payment.js"
 
 app.use("/api/v1", productRoutes);
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", orderRoutes);
+app.use("/api/v1", paymentRoutes);
 
 //error middleware
 app.use(errorMiddleware)
