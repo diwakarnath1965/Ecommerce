@@ -41,7 +41,13 @@ export const productApi = createApi({
                 url: `/can_review/?productId=${productId}`,
             }),
         }),
+
+        getAdminProducts: builder.query({
+            query: () => ({
+                url: `/admin/products`,
+            }),
+        }),
     })
 })
 
-export const {useGetProductsQuery,useGetProductDetailsQuery, useSubmitReviewMutation, useCanUserReviewQuery} = productApi
+export const {useGetProductsQuery,useGetProductDetailsQuery, useSubmitReviewMutation, useCanUserReviewQuery, useGetAdminProductsQuery} = productApi

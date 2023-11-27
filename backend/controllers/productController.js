@@ -49,6 +49,18 @@ export const getproductDetails = catchAsyncError(async (req, res, next) => {
   });
 });
 
+// create products by admin
+//url = /api/v1/products/:id
+export const getAdminProducts = catchAsyncError(async (req, res, next) => {
+  const products = await Product.find()
+
+  
+
+  res.status(200).json({
+    products,
+  });
+});
+
 // update product by id
 //url = /api/v1/products/:id
 export const updateProduct = catchAsyncError(async (req, res, next) => {
