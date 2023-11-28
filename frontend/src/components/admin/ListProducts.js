@@ -1,26 +1,37 @@
 import React, { useEffect } from "react";
-import { useMyOrdersQuery } from "../../redux/api/orderApi";
 import toast from "react-hot-toast";
 import Loader from "../Layout/Loader";
 import { MDBDataTable } from "mdbreact";
 import { Link } from "react-router-dom";
 import MetaData from "../Layout/MetaData";
-
-import { useGetAdminProductsQuery } from "../../redux/api/productsApi";
+import { useDeleteProductMutation, useGetAdminProductsQuery } from "../../redux/api/productsApi";
 import AdminLayout from "../Layout/AdminLayout";
 
 const ListProducts = () => {
   const { data, isLoading, error } = useGetAdminProductsQuery();
 
-  
+ const [deleteProduct,{isLoading: isDeleteLoading, error: deleteError, isSuccess}] = useDeleteProductMutation();
 
   useEffect(() => {
     if (error) {
       toast.error(error?.data?.message);
     }
 
+    if (deleteError) {
+      toast.error(deleteError?.data?.message);
+    }
+
+    if(isSuccess){
+      toast.success("Product Deleted Successfully");
+    }
+
    
-  }, [error]);
+  }, [error, deleteError, isSuccess]);
+
+  const deteleProductHandler = (id) => {
+    
+    deleteProduct(id);
+  };
 
   const setProducts = () => {
     const products = {
@@ -69,6 +80,8 @@ const ListProducts = () => {
             <button
               
               className="btn btn-outline-danger ms-2"
+              onClick={() => deteleProductHandler(product?._id)}
+              disabled={isDeleteLoading}
             >
               <i className="fa fa-trash"></i>
             </button>
