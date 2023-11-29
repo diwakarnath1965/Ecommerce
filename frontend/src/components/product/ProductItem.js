@@ -5,7 +5,7 @@ import StarRatings from 'react-star-ratings';
 const ProductItem = ({ product, columnSize }) => {
   return (
     <div className={`col-sm-12 col-md-6 col-lg-${columnSize} my-3`}>
-      <div className="card p-3 rounded">
+      <div className="card p-3 rounded-4">
         <img
           className="card-img-top mx-auto"
           src={product?.images[0] ? product?.images[0]?.url : "/images/default_product.png"}
@@ -13,7 +13,7 @@ const ProductItem = ({ product, columnSize }) => {
         />
         <div className="card-body ps-3 d-flex justify-content-center flex-column">
           <h5 className="card-title">
-            <Link to={`/product/${product?._id}`}>{product?.name}</Link>
+            <Link to={`/product/${product?._id}`}>{product?.name.substring(0,100)}...</Link>
           </h5>
           <div className="ratings mt-auto d-flex">
             <StarRatings

@@ -56,8 +56,8 @@ const UploadAvatar = () => {
     <UserLayout>
         <MetaData title={"Upload Avatar"} />
       <div className="row wrapper">
-        <div className="col-10 col-lg-8">
-          <form className="shadow rounded bg-body" onSubmit={submitHandler}>
+        <div className="col-10 col-lg-7">
+          <form className="shadow rounded-5 bg-body" onSubmit={submitHandler}>
             <h2 className="mb-4">Upload Avatar</h2>
             <div className="mb-3">
               <div className="d-flex align-items-center">
@@ -90,6 +90,7 @@ const UploadAvatar = () => {
               type="submit"
               className="btn w-100 py-2"
               disabled={isLoading}
+              style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}
             >
               {isLoading ? "Uploading..." : "Upload"}
             </button>

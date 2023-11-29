@@ -71,19 +71,19 @@ const ListProducts = () => {
         stock: product?.stock,
         actions: (
           <>
-            <Link to={`/admin/products/${product?._id}`} className="btn btn-outline-primary ">
-              <i className="fa fa-pencil"></i>
+            <Link to={`/admin/products/${product?._id}`} className="btn ">
+              <i className="fa fa-pencil " style={{color:"#f6ae84"}}></i>
             </Link>
-            <Link to={`/admin/products/${product?._id}/upload_images`} className="btn btn-outline-success ms-2 ">
-              <i className="fa fa-image"></i>
+            <Link to={`/admin/products/${product?._id}/upload_images`} className="btn  ms-2 ">
+              <i className="fa fa-image" style={{color:"#232f3e"}}></i>
             </Link>
             <button
               
-              className="btn btn-outline-danger ms-2"
+              className="btn ms-2"
               onClick={() => deteleProductHandler(product?._id)}
               disabled={isDeleteLoading}
             >
-              <i className="fa fa-trash"></i>
+              <i className="fa fa-trash" style={{color:"#f6ae84"}}></i>
             </button>
           </>
         ),

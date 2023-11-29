@@ -43,8 +43,8 @@ const UpdatePassword = () => {
     <UserLayout>
         <MetaData title={"Update Password"} />
     <div className="row wrapper">
-      <div className="col-10 col-lg-8">
-        <form className="shadow rounded bg-body" onSubmit={submitHandler}>
+      <div className="col-10 col-lg-6">
+        <form className="shadow rounded-5 bg-body" onSubmit={submitHandler}>
           <h2 className="mb-4">Update Password</h2>
           <div className="mb-3">
             <label htmlFor="old_password_field" className="form-label">
@@ -53,7 +53,7 @@ const UpdatePassword = () => {
             <input
               type="password"
               id="old_password_field"
-              className="form-control"
+              className="form-control rounded-5"
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
             />
@@ -65,12 +65,12 @@ const UpdatePassword = () => {
             <input
               type="password"
               id="new_password_field"
-              className="form-control"
+              className="form-control rounded-5"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn update-btn w-100" disabled={isLoading}>
+          <button type="submit" className="btn update-btn w-100" disabled={isLoading} style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}>
             {isLoading ? "Updating..." : "Update Password"}
           </button>
         </form>

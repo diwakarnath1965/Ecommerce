@@ -44,11 +44,12 @@ const Shipping = () => {
       <MetaData title={"Shipping Info"} />
 
       <CheckoutSteps shipping/>
-      <div className="row wrapper mb-5">
-        <div className="col-10 col-lg-5">
+      <div className="row wrapper mb-5" >
+        <div className="col-10 col-lg-5" >
           <form
-            className="shadow rounded bg-body"
+            className="shadow rounded-5 bg-body"
             onSubmit={submitHandler}
+
           >
             <h2 className="mb-4">Shipping Info</h2>
             <div className="mb-3">
@@ -124,7 +125,7 @@ const Shipping = () => {
                 ))}
               </select>
             </div>
-            <button id="shipping_btn" type="submit" className="btn w-100 py-2">
+            <button id="shipping_btn" type="submit" className="btn w-100 py-2" style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}>
               CONTINUE
             </button>
           </form>

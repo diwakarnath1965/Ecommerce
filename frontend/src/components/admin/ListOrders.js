@@ -6,29 +6,34 @@ import { Link } from "react-router-dom";
 import MetaData from "../Layout/MetaData";
 
 import AdminLayout from "../Layout/AdminLayout";
-import { useGetAdminOrdersQuery } from "../../redux/api/orderApi";
+import {
+  useDeleteOrderMutation,
+  useGetAdminOrdersQuery,
+} from "../../redux/api/orderApi";
 
 const ListOrders = () => {
   const { data, isLoading, error } = useGetAdminOrdersQuery();
+
+  const [deleteOrder, { error: deleteError,isLoading:isDeleteLoading, isSuccess }] =
+    useDeleteOrderMutation();
 
   useEffect(() => {
     if (error) {
       toast.error(error?.data?.message);
     }
 
-    // if (deleteError) {
-    //   toast.error(deleteError?.data?.message);
-    // }
+    if (deleteError) {
+      toast.error(deleteError?.data?.message);
+    }
 
-    // if(isSuccess){
-    //   toast.success("Product Deleted Successfully");
-    // }
-  }, [error]);
+    if (isSuccess) {
+      toast.success("Order Deleted Successfully");
+    }
+  }, [error, deleteError, isSuccess]);
 
-  //   const deteleProductHandler = (id) => {
-
-  //     deleteProduct(id);
-  //   };
+  const deteleOrderHandler = (id) => {
+    deleteOrder(id);
+  };
 
   const setOrders = () => {
     const orders = {
@@ -69,17 +74,17 @@ const ListOrders = () => {
           <>
             <Link
               to={`/admin/orders/${order?._id}`}
-              className="btn btn-outline-primary "
+              className="btn "
             >
-              <i className="fa fa-pencil"></i>
+              <i className="fa fa-pencil" style={{color:"#232f3e"}}></i>
             </Link>
 
             <button
-              className="btn btn-outline-danger ms-2"
-              //   onClick={() => deteleProductHandler(product?._id)}
-              //   disabled={isDeleteLoading}
+              className="btn ms-2"
+                onClick={() => deteleOrderHandler(order?._id)}
+                disabled={isDeleteLoading}
             >
-              <i className="fa fa-trash"></i>
+              <i className="fa fa-trash" style={{color:"#f6ae84"}}></i>
             </button>
           </>
         ),

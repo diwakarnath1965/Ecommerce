@@ -39,8 +39,8 @@ const ConfirmOrder = () => {
 
           {cartItems?.map((item) => (
             <>
-              <hr />
-              <div className="cart-item my-1">
+              
+              <div className="cart-item my-1" style={{paddingTop:"10px",paddingBottom:"10px",borderRadius:"20px",paddingLeft:"24px", border: "1px solid #232f3e"}}>
                 <div className="row">
                   <div className="col-4 col-lg-2">
                     <img
@@ -51,7 +51,7 @@ const ConfirmOrder = () => {
                     />
                   </div>
                   <div className="col-5 col-lg-6">
-                    <Link to={`/product/${item.product}`}>{item?.name}</Link>
+                    <Link to={`/product/${item.product}`} style={{ textDecoration: 'none' }}>{item?.name.substring(0,80)}...</Link>
                   </div>
                   <div className="col-4 col-lg-4 mt-4 mt-lg-0">
                     <p>
@@ -60,7 +60,7 @@ const ConfirmOrder = () => {
                   </div>
                 </div>
               </div>
-              <hr />
+              
             </>
           ))}
         </div>

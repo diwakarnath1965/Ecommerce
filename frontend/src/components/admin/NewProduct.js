@@ -48,9 +48,9 @@ const NewProduct = () => {
     <AdminLayout>
       <MetaData title={"New Product"} />
       <div className="row wrapper">
-        <div className="col-10 col-lg-10 mt-5 mt-lg-0">
-          <form className="shadow rounded bg-body" onSubmit={submitHandler}>
-            <h2 className="mb-4">New Product</h2>
+        <div className="col-10 col-lg-8 mt-5 mt-lg-0">
+          <form className="shadow rounded-5 bg-body" onSubmit={submitHandler}>
+            <h2 className="mb-4" style={{textAlign:"center"}}>New Product</h2>
             <div className="mb-3">
               <label htmlFor="name_field" className="form-label">
                 {" "}
@@ -59,7 +59,7 @@ const NewProduct = () => {
               <input
                 type="text"
                 id="name_field"
-                className="form-control"
+                className="form-control rounded-5"
                 name="name"
                 value={name}
                 onChange={onChange}
@@ -70,7 +70,7 @@ const NewProduct = () => {
                 Description
               </label>
               <textarea
-                className="form-control"
+                className="form-control rounded-5"
                 id="description_field"
                 rows={8}
                 name="description"
@@ -87,7 +87,7 @@ const NewProduct = () => {
                 <input
                   type="text"
                   id="price_field"
-                  className="form-control"
+                  className="form-control rounded-5"
                   name="price"
                   value={price}
                   onChange={onChange}
@@ -101,7 +101,7 @@ const NewProduct = () => {
                 <input
                   type="number"
                   id="stock_field"
-                  className="form-control"
+                  className="form-control rounded-5"
                   name="stock"
                   value={stock}
                   onChange={onChange}
@@ -115,7 +115,7 @@ const NewProduct = () => {
                   Category
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select rounded-5"
                   id="category_field"
                   name="category"
                   value={category}
@@ -136,14 +136,14 @@ const NewProduct = () => {
                 <input
                   type="text"
                   id="seller_field"
-                  className="form-control"
+                  className="form-control rounded-5"
                   name="seller"
                   value={seller}
                   onChange={onChange}
                 />
               </div>
             </div>
-            <button type="submit" className="btn w-100 py-2" disabled={isLoading}>
+            <button type="submit" className="btn w-100 py-2" disabled={isLoading} style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}} >
                 {isLoading ? "Creating..." : "CREATE"}
             </button>
           </form>

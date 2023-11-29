@@ -129,16 +129,17 @@ const ProductDetails = () => {
           <hr />
           <p id="product_price">${product?.price}</p>
           <div className="stockCounter d-inline">
-            <span className="btn btn-danger minus" onClick={decreaseQty}>
+            <span className="btn  minus" onClick={decreaseQty}>
               -
             </span>
             <input
               type="number"
-              className="form-control count d-inline"
+              className="form-control count  d-inline"
+              style={{backgroundColor: "#f7f7f8"}}
               value={quantity}
               readOnly
             />
-            <span className="btn btn-primary plus" onClick={increaseQty}>
+            <span className="btn plus" onClick={increaseQty}>
               +
             </span>
           </div>

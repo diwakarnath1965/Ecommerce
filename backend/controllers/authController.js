@@ -279,6 +279,10 @@ export const deleteUser = catchAsyncError(async (req, res, next) => {
 
     //remove avatar from cloudinary: TODO
 
+    if(user?.avatar?.public_id) {
+      await delete_file(user?.avatar?.public_id);
+    }
+
     await user.deleteOne();
 
     res.status(200).json({

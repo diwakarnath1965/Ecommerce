@@ -50,6 +50,7 @@ const Dashboard = () => {
               startDate={startDate}
               endDate={endDate}
               className="form-control"
+              
             />
           </div>
           <div className="mb-3">
@@ -67,15 +68,16 @@ const Dashboard = () => {
           <button
             className="btn fetch-btn ms-4 mt-3 px-5"
             onClick={submitHandler}
+            style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}
           >
             Fetch
           </button>
         </div>
         <div className="row pr-4 my-5">
           <div className="col-xl-6 col-sm-12 mb-3">
-            <div className="card text-white bg-success o-hidden h-100">
+            <div className="card text-white o-hidden h-100" style={{backgroundColor:"#f6ae84",borderRadius:"60px"}}>
               <div className="card-body">
-                <div className="text-center card-font-size">
+                <div className="text-center card-font-size" style={{color:"#232f3e"}}>
                   Sales
                   <br />
                   <b>${data?.totalSales?.toFixed(2)}</b>
@@ -84,9 +86,9 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="col-xl-6 col-sm-12 mb-3">
-            <div className="card text-white bg-danger o-hidden h-100">
+            <div className="card text-white o-hidden h-100" style={{backgroundColor:"#232f3e",borderRadius:"60px"}}>
               <div className="card-body">
-                <div className="text-center card-font-size">
+                <div className="text-center card-font-size" style={{color:"#f6ae84"}}>
                   Orders
                   <br />
                   <b>{data?.totalNumOrders}</b>

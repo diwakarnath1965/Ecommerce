@@ -6,12 +6,12 @@ const AdminLayout = ({ children }) => {
     {
       name: "Dashboard",
       url: "/admin/dashboard",
-      icon: "fas fa-tachometer-alt",
+      icon: "fa-solid fa-chart-line",
     },
     {
       name: "New Product",
       url: "/admin/product/new",
-      icon: "fas fa-plus",
+      icon: "fa-solid fa-plus",
     },
     {
       name: "Products",

@@ -451,7 +451,7 @@ export const getResetPasswordTemplate = (username,resetUrl) => `
                   href="https://shopit.com"
                   class="f-fallback email-masthead_name"
                 >
-                  ecommerce
+                  <img src="./images/shopit_logo.png>
                 </a>
               </td>
             </tr>
@@ -477,7 +477,7 @@ export const getResetPasswordTemplate = (username,resetUrl) => `
                         <h1>Hi ${username},</h1>
                         <p>
                           You recently requested to reset your password for your
-                          ecommerce account. Use the button below to reset it.
+                          amazon account. Use the button below to reset it.
                           <strong
                             >This password reset is only valid for the next 30
                             minutes.</strong
@@ -521,7 +521,7 @@ export const getResetPasswordTemplate = (username,resetUrl) => `
                           <a href="{{support_url}}">contact support</a> if you
                           have questions.
                         </p>
-                        <p>Thanks, <br />The ShopIT team</p>
+                        <p>Thanks, <br />The amazon team</p>
 
                         <table class="body-sub" role="presentation">
                           <tr>
@@ -556,7 +556,7 @@ export const getResetPasswordTemplate = (username,resetUrl) => `
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="f-fallback sub align-center">
-                        ShopIT
+                        amazon
                         <br />1234 Street Rd. <br />Suite 1234
                       </p>
                     </td>

@@ -40,12 +40,12 @@ const Login = () => {
     <>
     <MetaData title={"Login"} />
     <div className="row wrapper">
-      <div className="col-10 col-lg-5">
+      <div className="col-10 col-lg-4">
         <form
-          className="shadow rounded bg-body"
+          className="shadow rounded-5 bg-body"
           onSubmit={submitHandler}
         >
-          <h2 className="mb-4">Login</h2>
+          <h2 className="mb-4" style={{textAlign:"center"}}>Login</h2>
           <div className="mb-3">
             <label htmlFor="email_field" className="form-label">
               Email
@@ -53,7 +53,7 @@ const Login = () => {
             <input
               type="email"
               id="email_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -66,7 +66,7 @@ const Login = () => {
             <input
               type="password"
               id="password_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -75,7 +75,7 @@ const Login = () => {
           <a href="/password/forgot" className="float-end mb-4">
             Forgot Password?
           </a>
-          <button id="login_button" type="submit" className="btn w-100 py-2" disabled={isLoading}>
+          <button id="login_button" type="submit" className="btn w-100 py-2" disabled={isLoading} style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}>
             {isLoading ? (
               <span className="spinner-border spinner-border-sm"></span>
             ) : (
@@ -83,7 +83,7 @@ const Login = () => {
             )}
           </button>
           <div className="my-3">
-            <a href="/register" className="float-end">
+            <a href="/register" className="float-end"  >
               New User?
             </a>
           </div>

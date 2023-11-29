@@ -49,9 +49,9 @@ const UpdateProfile = () => {
     <UserLayout>
     <MetaData title={"Update Profile"} />
     <div className="row wrapper">
-      <div className="col-10 col-lg-8">
+      <div className="col-10 col-lg-7">
         <form
-          className="shadow rounded bg-body"
+          className="shadow rounded-5 bg-body"
           onSubmit={submitHandler}
         >
           <h2 className="mb-4">Update Profile</h2>
@@ -63,7 +63,7 @@ const UpdateProfile = () => {
             <input
               type="text"
               id="name_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -77,13 +77,13 @@ const UpdateProfile = () => {
             <input
               type="email"
               id="email_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn update-btn w-100" disabled={isLoading}>
+          <button type="submit" className="btn update-btn w-100" style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}>
             {isLoading ? "Updating..." : "Update"}
           </button>
         </form>

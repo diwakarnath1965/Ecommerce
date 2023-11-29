@@ -42,12 +42,12 @@ const ForgotPassword = () => {
     <>
     <MetaData title={"Forgot Password"} />
     <div className="row wrapper">
-      <div className="col-10 col-lg-5">
+      <div className="col-10 col-lg-4">
         <form
-          className="shadow rounded bg-body"
+          className="shadow rounded-5 bg-body"
           onSubmit={submitHandler}
         >
-          <h2 className="mb-4">Forgot Password</h2>
+          <h2 className="mb-4" style={{textAlign:"center"}}>Forgot Password</h2>
           <div className="mt-3">
             <label htmlFor="email_field" className="form-label">
               Enter Email
@@ -55,7 +55,7 @@ const ForgotPassword = () => {
             <input
               type="email"
               id="email_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -66,6 +66,7 @@ const ForgotPassword = () => {
             type="submit"
             className="btn w-100 py-2"
             disabled={isLoading}
+            style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}
           >
             {isLoading ? (
                 <div className="spinner-border text-light" role="status">

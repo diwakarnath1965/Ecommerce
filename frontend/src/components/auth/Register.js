@@ -50,13 +50,13 @@ const Register = () => {
     <>
     <MetaData title={"Register"} />
     <div className="row wrapper">
-      <div className="col-10 col-lg-5">
+      <div className="col-10 col-lg-4">
         <form
-          className="shadow rounded bg-body"
+          className="shadow rounded-5 bg-body"
           action="your_submit_url_here"
           onSubmit={submitHandler}
         >
-          <h2 className="mb-4">Register</h2>
+          <h2 className="mb-4" style={{textAlign:"center"}}>Register</h2>
           <div className="mb-3">
             <label htmlFor="name_field" className="form-label">
               Name
@@ -64,7 +64,7 @@ const Register = () => {
             <input
               type="text"
               id="name_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="name"
               value={name}
               onChange={onChange}
@@ -77,7 +77,7 @@ const Register = () => {
             <input
               type="email"
               id="email_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="email"
               value={email}
               onChange={onChange}
@@ -90,13 +90,13 @@ const Register = () => {
             <input
               type="password"
               id="password_field"
-              className="form-control"
+              className="form-control rounded-5"
               name="password"
               value={password}
               onChange={onChange}
             />
           </div>
-          <button id="register_button" type="submit" className="btn w-100 py-2" disabled={isLoading}>
+          <button id="register_button" type="submit" className="btn w-100 py-2" disabled={isLoading} style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}>
             {isLoading ? "registering..." : "REGISTER"}
           </button>
         </form>

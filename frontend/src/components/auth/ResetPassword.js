@@ -47,8 +47,8 @@ const ResetPassword = () => {
     <>
       <MetaData title={"Reset Password"} />
       <div className="row wrapper">
-        <div className="col-10 col-lg-5">
-          <form className="shadow rounded bg-body" onSubmit={submitHandler}>
+        <div className="col-10 col-lg-4">
+          <form className="shadow rounded-5 bg-body" onSubmit={submitHandler}>
             <h2 className="mb-4">New Password</h2>
             <div className="mb-3">
               <label htmlFor="password_field" className="form-label">
@@ -57,7 +57,7 @@ const ResetPassword = () => {
               <input
                 type="password"
                 id="password_field"
-                className="form-control"
+                className="form-control rounded-5"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +70,7 @@ const ResetPassword = () => {
               <input
                 type="password"
                 id="confirm_password_field"
-                className="form-control"
+                className="form-control rounded-5"
                 name="confirm_password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -81,6 +81,7 @@ const ResetPassword = () => {
               type="submit"
               className="btn w-100 py-2"
               disabled={isLoading}
+              style={{backgroundColor:"#232f3e",borderRadius:"20px",color:"#f6ae84"}}
             >
               Set Password
             </button>

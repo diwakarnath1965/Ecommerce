@@ -25,7 +25,7 @@ const Header = () => {
       <div className="col-12 col-md-3 ps-5">
         <div className="navbar-brand">
           <a href="/">
-            <img src="/images/shopit_logo.png" alt="ShopIT Logo" />
+            <img src="/images/shopit_logo.png" height="50" width="70"  alt="ShopIT Logo" />
           </a>
         </div>
       </div>
@@ -34,9 +34,9 @@ const Header = () => {
       </div>
       <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
         <a href="/cart" style={{ textDecoration: "none" }}>
-          <span id="cart" className="ms-3">
+          <span id="cart" className="ms-3" style={{ fontSize: '24px' }}>
             {" "}
-            Cart{" "}
+            <i className="fas fa-shopping-cart pt-3"></i>{" "}
           </span>
           <span className="ms-1" id="cart_count">
             {cartItems?.length}

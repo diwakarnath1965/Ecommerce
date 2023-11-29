@@ -55,7 +55,7 @@ const Cart = () => {
         <h2 className="mt-5">Your cart is empty</h2>
       ) : (
         <>
-          <h2 className="mt-5">
+          <h2 className="mt-5" >
             Your cart: <b>{cartItems.length} items</b>
           </h2>
 
@@ -63,8 +63,8 @@ const Cart = () => {
             <div className="col-12 col-lg-8">
               {cartItems.map((item) => (
                 <>
-                  <hr />
-                  <div className="cart-item" data-key="product1">
+                  {/* <hr /> */}
+                  <div className="cart-item" data-key="product1" style={{paddingTop:"10px",paddingBottom:"10px",borderRadius:"20px",paddingLeft:"24px", border: "1px solid #232f3e"}} >
                     <div className="row">
                       <div className="col-4 col-lg-3">
                         <img
@@ -75,18 +75,18 @@ const Cart = () => {
                         />
                       </div>
                       <div className="col-5 col-lg-3">
-                        <Link to={`/products/${item?.product}`}>
+                        <Link to={`/product/${item?.product}`} style={{ textDecoration: 'none' }}>
                           {" "}
-                          {item.name}{" "}
+                          {item.name.substring(0,50)}...{" "}
                         </Link>
                       </div>
-                      <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                      <div className="col-4 col-lg-2 mt-4 mt-lg-0" style={{paddingTop:"24px"}}>
                         <p id="card_item_price">${item.price}</p>
                       </div>
-                      <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                      <div className="col-4 col-lg-3 mt-4 mt-lg-0" style={{paddingTop:"24px"}}>
                         <div className="stockCounter d-inline">
                           <span
-                            className="btn btn-danger minus"
+                            className="btn  minus"
                             onClick={() => decreaseQty(item, item.quantity)}
                           >
                             -
@@ -94,18 +94,19 @@ const Cart = () => {
                           <input
                             type="number"
                             className="form-control count d-inline"
+                            style={{ backgroundColor: "#f7f7f8" }}
                             value={item.quantity}
                             readOnly
                           />
                           <span
-                            className="btn btn-primary plus"
+                            className="btn plus"
                             onClick={() => increaseQty(item, item.quantity)}
                           >
                             +
                           </span>
                         </div>
                       </div>
-                      <div className="col-4 col-lg-1 mt-4 mt-lg-0">
+                      <div className="col-4 col-lg-1 mt-4 mt-lg-0" style={{paddingTop:"24px"}} >
                         <i
                           id="delete_cart_item"
                           className="fa fa-trash btn btn-danger"
@@ -114,7 +115,7 @@ const Cart = () => {
                       </div>
                     </div>
                   </div>
-                  <hr />
+                  {/* <hr /> */}
                 </>
               ))}
             </div>

@@ -1,5 +1,6 @@
 export const PRODUCT_CATEGORIES = [
   "Electronics",
+  "Watches",
   "Cameras",
   "Laptops",
   "Accessories",
