@@ -9,6 +9,7 @@ import { setCartItem } from "../../redux/features/cartSlice";
 import MetaData from "../Layout/MetaData";
 import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
+import NotFound from "../Layout/NotFound";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -75,6 +76,10 @@ const ProductDetails = () => {
     return <Loader />;
   }
 
+  if (error && error?.status == 404) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <MetaData title={product?.name} />
@@ -135,7 +140,7 @@ const ProductDetails = () => {
             <input
               type="number"
               className="form-control count  d-inline"
-              style={{backgroundColor: "#f7f7f8"}}
+              style={{ backgroundColor: "#f7f7f8" }}
               value={quantity}
               readOnly
             />
@@ -179,7 +184,9 @@ const ProductDetails = () => {
           )}
         </div>
       </div>
-      {product?.reviews?.length > 0 && <ListReviews reviews={product?.reviews}/>}
+      {product?.reviews?.length > 0 && (
+        <ListReviews reviews={product?.reviews} />
+      )}
     </>
   );
 };
