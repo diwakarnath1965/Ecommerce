@@ -9,7 +9,7 @@
 /coverage
 
 # production
-backend/.env
+.env
 .env.production
 
 # misc
